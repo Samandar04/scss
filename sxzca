@@ -1,0 +1,70 @@
+
+  nav {
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: black;
+    color: white;
+    padding: 20px 0;
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .logo {
+        font-family: font-bold;
+        text-transform: capitalize;
+        font-style: 30px;
+      }
+      .navs {
+        display: flex;
+        li {
+          a {
+            padding: 10px 0px;
+            margin: 0 15px;
+            text-transform: capitalize;
+            color: rgba(255, 255, 255, 0.7);
+            font-family: font-bold;
+            position: relative;
+            &:hover {
+              @include nav-effect();
+            }
+            &::after {
+              width: 30px;
+            }
+            &::after {
+              content: "";
+              width: 0px;
+              height: 2px;
+              background-color: $main-green-color;
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              transition-duration: 0.3s;
+            }
+          }
+          .active {
+            @include nav-effect();
+          }
+        }
+      }
+    }
+  }
+  background-color: #0093E9;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
+
+<div class="gallery">
+  <a target="_blank" href="img_5terre.jpg">
+    <img src="img_5terre.jpg" alt="Cinque Terre" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="img_forest.jpg">
+    <img src="img_forest.jpg" alt="Forest" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
